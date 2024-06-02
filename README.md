@@ -1,1 +1,2 @@
 # Book_recommendation_system
+Welcome to the Book Recommendation System project! This system aims to provide personalized book recommendations to users based on their preferences. Users can also get access to a curated list of the top 50 books. Whether you're an avid reader looking for your next favorite book or a newcomer to the world of literature seeking guidance, our system is designed to cater to your unique interests and tastes.
