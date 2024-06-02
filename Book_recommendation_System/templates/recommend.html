@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Recommender System</title>
+    <link rel="stylesheet" href="../static/recommend.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="nav">
+            <li><a href="/"><h2 id="heading">Book Recommender</h2></a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/recommend">Recommend</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1 class="heading">Recommend Books</h1>
+        <form action="/recommend_books" class="form-inline">
+            <div class="form-group">
+                <input name="user_input" type="text" class="form-control" placeholder="Enter book Name">
+            </div>
+            <button type="submit" class="btn">Recommend</button>
+        </form>
+        {% if data and data[0] != "Book not found"  %}
+        <div class="grid-container">
+            {% for i in data %}
+                <div class="grid-item">
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="card-img" src="{{i[2]}}" alt="Book cover">
+                            <p class="text-white">{{i[0]}}</p>
+                            <h4 class="text-white">{{i[1]}}</h4>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        {% if data and data[0] == "Book not found" %}
+            <h1 id="Notfound">🔍Books Not Found📔</h1>
+            <h2 id="Notfound">Please Try With Some other Book</h2>
+        {% endif %}
+        
+    </div>
+</body>
+</html>

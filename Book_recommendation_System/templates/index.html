@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Recommender System</title>
+    <link rel="stylesheet" href="../static/index.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="nav">
+            <li><a href="/"><h2 id="heading">Book Recommender</h2></a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/recommend">Recommend</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="header">
+            <h1>Top 50 Books</h1>
+        </div>
+        <div class="grid-container">
+            {% for i in range(book_name|length) %}
+            <div class="grid-item">
+                <div class="card">
+                    <div class="card-body">
+                        <img class="card-img" src="{{ image[i] }}" alt="Book cover">
+                        <h3 class="book-title">{{ book_name[i] }}</h3>
+                        <h4 class="author">{{ author[i] }}</h4>
+                        <p class="votes">Votes: {{ votes[i] }}</p>
+                        <p class="rating">Rating: {{ rating[i] }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
