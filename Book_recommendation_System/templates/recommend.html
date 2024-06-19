@@ -1,18 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Book Recommender System</title>
+{% extends "navbar.html" %}
+
+{% block style %}
     <link rel="stylesheet" href="../static/recommend.css">
-</head>
-<body>
-    <nav class="navbar">
-        <ul class="nav">
-            <li><a href="/"><h2 id="heading">Book Recommender</h2></a></li>
-            <li><a href="/">Home</a></li>
-            <li><a href="/recommend">Recommend</a></li>
-        </ul>
-    </nav>
+{% endblock %}
+
+{% block body %}
     <div class="container">
         <h1 class="heading">Recommend Books</h1>
         <form action="/recommend_books" class="form-inline">
@@ -42,5 +34,4 @@
         {% endif %}
         
     </div>
-</body>
-</html>
+{% endblock %}

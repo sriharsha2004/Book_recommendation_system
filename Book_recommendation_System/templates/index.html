@@ -1,18 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Book Recommender System</title>
+{% extends "navbar.html" %}
+
+{% block style %}
     <link rel="stylesheet" href="../static/index.css">
-</head>
-<body>
-    <nav class="navbar">
-        <ul class="nav">
-            <li><a href="/"><h2 id="heading">Book Recommender</h2></a></li>
-            <li><a href="/">Home</a></li>
-            <li><a href="/recommend">Recommend</a></li>
-        </ul>
-    </nav>
+{% endblock %}
+
+{% block body %}
     <div class="container">
         <div class="header">
             <h1>Top 50 Books</h1>
@@ -33,5 +25,4 @@
             {% endfor %}
         </div>
     </div>
-</body>
-</html>
+{% endblock %}
